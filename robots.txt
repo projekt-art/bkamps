@@ -1,0 +1,6 @@
+# Consenti a tutti i crawler di accedere a tutto il sito.
+User-agent: *
+Disallow:
+
+# Specifica la posizione della sitemap.
+Sitemap: https://www.benjaminkamps.it/sitemap.xml

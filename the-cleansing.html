@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artwork 'The Cleansing' (2024) by Benjamin Kamps.">
+    <title>Benjamin Kamps - The Cleansing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #F8F8F8; --text-color: #1A1A1A; --light-text: #666666; --border-color: #E0E0E0;
+            --font-family-sans: "Space Grotesk", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --max-content-width: 1200px; --text-column-width: 750px; --spacing-unit: 2rem;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: var(--font-family-sans); color: var(--text-color); background-color: var(--primary-bg); line-height: 1.7; -webkit-font-smoothing: antialiased; font-size: 1rem; font-weight: 400; }
+        a { color: var(--text-color); text-decoration: none; transition: color 0.2s ease-in-out; }
+        a:hover { color: var(--light-text); }
+        .site-header { position: sticky; top: 0; left: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: calc(var(--spacing-unit) * 1) var(--spacing-unit); background-color: var(--primary-bg); z-index: 1000; border-bottom: 1px solid var(--border-color); }
+        .artist-name { font-size: 1.5rem; font-weight: 600; letter-spacing: 0.01em; }
+        .main-nav ul { list-style: none; display: flex; gap: calc(var(--spacing-unit) * 1.5); }
+        .main-nav a { font-size: 1rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.5rem 0; }
+        
+        .artwork-detail-section { max-width: 1000px; margin: 0 auto; padding: calc(var(--spacing-unit) * 3) var(--spacing-unit); }
+        .hero-image img { width: 100%; height: auto; display: block; margin-bottom: calc(var(--spacing-unit) * 2); }
+        .artwork-text-block { max-width: var(--text-column-width); margin: 0 auto; text-align: center; margin-bottom: calc(var(--spacing-unit) * 3); }
+        .artwork-title { font-size: 2.5rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .artwork-year { font-size: 1.2rem; color: var(--light-text); margin-bottom: 1.5rem; font-weight: 400; }
+        .artwork-description { font-size: 1.15rem; line-height: 1.8; text-align: left; }
+        .gallery-image { margin-bottom: var(--spacing-unit); }
+        .gallery-image img { width: 100%; height: auto; display: block; }
+        .back-link-container { text-align: center; margin-top: calc(var(--spacing-unit) * 3); }
+        .back-link { font-size: 1rem; text-transform: uppercase; font-weight: 500; letter-spacing: 0.08em; padding: 0.75rem 1.5rem; border: 1px solid var(--border-color); transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; }
+        .back-link:hover { background-color: var(--text-color); color: var(--primary-bg); border-color: var(--text-color); }
+        
+        .site-footer { text-align: center; padding: var(--spacing-unit); margin-top: calc(var(--spacing-unit) * 3); font-size: 0.9rem; color: var(--light-text); border-top: 1px solid var(--border-color); }
+
+        @media (max-width: 768px) {
+            .site-header { flex-direction: column; align-items: center; } .artist-name { margin-bottom: 1rem; }
+            .artwork-title { font-size: 2rem; } .artwork-description { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="artist-name"><a href="index.html">Benjamin Kamps</a></div>
+        <nav class="main-nav"><ul><li><a href="index.html#artworks">Artworks</a></li><li><a href="index.html#about">About</a></li><li><a href="index.html#exhibitions">Exhibitions</a></li><li><a href="index.html#contact">Contact</a></li></ul></nav>
+    </header>
+    <main>
+        <section class="artwork-detail-section">
+            <div class="hero-image">
+                <img src="img/cleansing02.png" alt="The Cleansing - Main view">
+            </div>
+            <div class="artwork-text-block">
+                <h1 class="artwork-title">The Cleansing</h1>
+                <p class="artwork-year">2024</p>
+                <p class="artwork-description">
+                    “The Cleansing" is a performative action that intends to subvert the consolidated paradigms that permeate social constructions. All matter is one! Through the ritualized repetition of the physical interaction between water and dirt, Kamps deliberately orchestrates a transformative and sensorial experience aimed at deconstructing the perceptual boundaries of time and space. He embarks on a journey towards equilibrium and revelation. Water and Dirt merge together.
+                </p>
+            </div>
+            <div class="gallery">
+                <div class="gallery-image"><img src="img/cleansing03.png" alt="The Cleansing - Detail"></div>
+            </div>
+            <div class="back-link-container"><a href="index.html#artworks" class="back-link">Back to Artworks</a></div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <p>&copy; <span id="current-year"></span> Benjamin Kamps. All rights reserved.</p>
+    </footer>
+    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
