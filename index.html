@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Official website of Benjamin Kamps, a contemporary artist showcasing artworks, exhibitions, and contact information.">
+    <title>Benjamin Kamps - Contemporary Artist</title>
+    <!-- NUOVO FONT: Space Grotesk from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #F8F8F8; --text-color: #1A1A1A; --light-text: #666666; --border-color: #E0E0E0;
+            /* FONT FAMILY AGGIORNATO */
+            --font-family-sans: "Space Grotesk", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --max-content-width: 1200px; --text-column-width: 750px; --spacing-unit: 2rem;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: var(--font-family-sans); color: var(--text-color); background-color: var(--primary-bg); line-height: 1.7; -webkit-font-smoothing: antialiased; font-size: 1rem; font-weight: 400; }
+        a { color: var(--text-color); text-decoration: none; transition: color 0.2s ease-in-out; }
+        a:hover { color: var(--light-text); }
+        h1, h2, h3, h4, h5, h6 { font-weight: 500; line-height: 1.2; margin-bottom: var(--spacing-unit); }
+        p { margin-bottom: var(--spacing-unit); }
+        strong { font-weight: 600; }
+
+        .site-header { position: sticky; top: 0; left: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: calc(var(--spacing-unit) * 1) var(--spacing-unit); background-color: var(--primary-bg); z-index: 1000; border-bottom: 1px solid var(--border-color); }
+        .artist-name { font-size: 1.5rem; font-weight: 600; letter-spacing: 0.01em; }
+        .main-nav ul { list-style: none; display: flex; gap: calc(var(--spacing-unit) * 1.5); }
+        .main-nav a { font-size: 1rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.5rem 0; }
+        .section { padding: calc(var(--spacing-unit) * 3) var(--spacing-unit); max-width: var(--max-content-width); margin: 0 auto; }
+        .section-title { font-size: 3rem; font-weight: 400; text-align: center; margin-bottom: calc(var(--spacing-unit) * 2.5); }
+
+        .artwork-list { max-width: 1000px; margin: 0 auto; }
+        .artwork-entry { margin-bottom: calc(var(--spacing-unit) * 4); }
+        .artwork-entry:last-of-type { margin-bottom: 0; }
+        .artwork-header { margin-bottom: calc(var(--spacing-unit) * 1); text-align: left; }
+        .artwork-title { font-size: 2rem; font-weight: 600; margin: 0; }
+        .artwork-year { font-size: 1.2rem; color: var(--light-text); margin: 0; font-weight: 400; }
+        .artwork-image-container img { width: 100%; height: auto; display: block; }
+        .artwork-link { display: block; text-decoration: none; color: inherit; transition: opacity 0.2s ease-in-out; }
+        .artwork-link:hover { opacity: 0.85; }
+
+        .about-content { display: flex; flex-direction: column; align-items: center; gap: calc(var(--spacing-unit) * 2.5); max-width: var(--text-column-width); margin: 0 auto; }
+        .artist-portrait { width: 280px; height: 280px; border-radius: 50%; overflow: hidden; background-color: #D0D0D0; flex-shrink: 0; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); }
+        .artist-portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .bio-text { font-size: 1.15rem; line-height: 1.8; text-align: left; }
+        .bio-text p { margin-bottom: 1.5rem; }
+        .bio-text p:last-child { margin-bottom: 0; }
+        .exhibitions-list { max-width: var(--text-column-width); margin: 0 auto; list-style: none; }
+        .exhibition-item { margin-bottom: var(--spacing-unit); padding-bottom: var(--spacing-unit); border-bottom: 1px solid var(--border-color); }
+        .exhibition-item:last-child { border-bottom: none; }
+        .exhibition-year { font-size: 1.3rem; font-weight: 600; margin-bottom: 0.6rem; display: block; color: var(--text-color); }
+        .exhibition-details { font-size: 1.1rem; line-height: 1.6; color: var(--light-text); }
+        .contact-content { max-width: var(--text-column-width); margin: 0 auto; text-align: center; font-size: 1.15rem; line-height: 1.8; }
+        .contact-content p { margin-bottom: 1rem; }
+        .social-links { display: flex; justify-content: center; gap: calc(var(--spacing-unit) * 1); margin-top: var(--spacing-unit); }
+        .social-links a { font-size: 1.15rem; letter-spacing: 0.05em; text-transform: capitalize; font-weight: 500; }
+        .site-footer { text-align: center; padding: var(--spacing-unit); margin-top: calc(var(--spacing-unit) * 3); font-size: 0.9rem; color: var(--light-text); border-top: 1px solid var(--border-color); }
+
+        @media (max-width: 768px) {
+            .site-header { flex-direction: column; align-items: center; padding-top: var(--spacing-unit); padding-bottom: var(--spacing-unit); }
+            .artist-name { margin-bottom: calc(var(--spacing-unit) / 1.5); }
+            .main-nav { width: 100%; }
+            .main-nav ul { justify-content: center; flex-wrap: wrap; }
+            .section-title { font-size: 2rem; }
+            .artwork-title { font-size: 1.5rem; }
+            .artwork-year { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="artist-name"><a href="index.html">Benjamin Kamps</a></div>
+        <nav class="main-nav"><ul><li><a href="#artworks">Artworks</a></li><li><a href="#about">About</a></li><li><a href="#exhibitions">Exhibitions</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+    </header>
+    <main>
+        <section id="artworks" class="section">
+            <div class="artwork-list">
+                <!-- OGNI OPERA ORA PUNTA ALLA SUA PAGINA SPECIFICA -->
+                <div class="artwork-entry">
+                    <header class="artwork-header"><h2 class="artwork-title">Walking men</h2><p class="artwork-year">2024</p></header>
+                    <a href="walking-men.html" class="artwork-link"><div class="artwork-image-container"><img src="img/walking-men-cover.png" alt="Walking men installation view"></div></a>
+                </div>
+                <div class="artwork-entry">
+                    <header class="artwork-header"><h2 class="artwork-title">The Cleansing</h2><p class="artwork-year">2024</p></header>
+                    <a href="the-cleansing.html" class="artwork-link"><div class="artwork-image-container"><img src="img/the-cleansing-cover.png" alt="The Cleansing"></div></a>
+                </div>
+                <div class="artwork-entry">
+                    <header class="artwork-header"><h2 class="artwork-title">Inside</h2><p class="artwork-year">2023</p></header>
+                    <a href="inside.html" class="artwork-link"><div class="artwork-image-container"><img src="img/inside-cover.png" alt="Inside"></div></a>
+                </div>
+                <div class="artwork-entry">
+                    <header class="artwork-header"><h2 class="artwork-title">Warmth</h2><p class="artwork-year">2023</p></header>
+                    <a href="warmth.html" class="artwork-link"><div class="artwork-image-container"><img src="img/warmth-cover.jpeg" alt="Warmth"></div></a>
+                </div>
+                <div class="artwork-entry">
+                    <header class="artwork-header"><h2 class="artwork-title">Chainmail</h2><p class="artwork-year">2023</p></header>
+                    <a href="chainmail.html" class="artwork-link"><div class="artwork-image-container"><img src="img/chainmail-cover.png" alt="Chainmail"></div></a>
+                </div>
+                <div class="artwork-entry">
+                    <header class="artwork-header"><h2 class="artwork-title">Eternalizing Love</h2><p class="artwork-year">2022</p></header>
+                    <a href="eternalizing-love.html" class="artwork-link"><div class="artwork-image-container"><img src="img/eternalizing-love-cover.png" alt="Eternalizing Love"></div></a>
+                </div>
+            </div>
+        </section>
+        <section id="about" class="section">
+            <h2 class="section-title">About</h2>
+            <div class="about-content">
+                <div class="artist-portrait"><img src="img/artist-portrait.jpeg" alt="Portrait of Benjamin Kamps"></div>
+                <div class="bio-text">
+                    <p>Benjamin Kamps, born in New York City in 1999. He is originally from Germany and raised in Rome.</p>
+                    <p>The use of organic materials enhances an emotional resonance with his work as well as establishing a profound connection with the natural environment and his childhood. By integrating elements from the natural world, he contributes to a broader conversation of the significance and beauty of the environment.</p>
+                    <p>His language, identified by a research that reflects on the conceptual architecture of human existence. It is characterized by an incessant quest for new expressive forms and renewed awareness of socio-cultural dynamics.</p>
+                    <p>The process, incorporates an instinctive and direct physicality. These actions are manifested with perseverance, care and diligence serving the means to cultivate mindfulness and growth.</p>
+                </div>
+            </div>
+        </section>
+        <section id="exhibitions" class="section">
+            <h2 class="section-title">Exhibitions</h2>
+            <ul class="exhibitions-list">
+                <li class="exhibition-item"><span class="exhibition-year">2024</span><span class="exhibition-details"><strong>Premio Sparti 3rd edition</strong>, collective exhibition curated by Niccolò Giacomazzi and Martina Macchia, Palazzo dei Capitani, Ascoli Piceno.</span></li>
+                <li class="exhibition-item"><span class="exhibition-year">2024</span><span class="exhibition-details"><strong>Walking men</strong>, solo exhibition, Chiesa Santa Maria in Parasceve, Sezze Romano (LT)</span></li>
+                <li class="exhibition-item"><span class="exhibition-year">2023</span><span class="exhibition-details"><strong>Cosmosi Vol 2</strong>, collective exhibition curated by Simone Cametti, Galleria Cosmo, (RM)</span></li>
+                <li class="exhibition-item"><span class="exhibition-year">2023</span><span class="exhibition-details"><strong>Warmth</strong>, solo exhibition, Casale Monte Pilorci, Sezze Romano (LT)</span></li>
+                <li class="exhibition-item"><span class="exhibition-year">2023</span><span class="exhibition-details"><strong>Vacunalia 3rd edition</strong>, collective exhibition curated by Niccolò Giacomazzi and Benedetta Monti, Vacone (RI)</span></li>
+            </ul>
+        </section>
+        <section id="contact" class="section">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-content">
+                <p>For inquiries, please get in touch.</p>
+                <p><a href="mailto:benjaminchristophkamps@gmail.com">benjaminchristophkamps@gmail.com</a></p>
+                <p>+39 3271235198</p>
+                <p>Studio: Monte Pilorci, Sezze Romano (LT)</p>
+                <div class="social-links"><a href="https://www.instagram.com/benjaminkamps1" target="_blank" rel="noopener noreferrer">Instagram</a></div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <p>&copy; <span id="current-year"></span> Benjamin Kamps. All rights reserved.</p>
+    </footer>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerOffset = document.querySelector('.site-header').offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = elementPosition - headerOffset;
+                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
